@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div style="transform: scale(0.9)" class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Cadastro</h1>
+			<p>
+				Junte-se à nossa comunidade! 
+			</p>
+			<input type="text" placeholder="Nome Completo" />
+			<input type="text" placeholder="CPF" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Senha" />
+			<input type="password" placeholder="Confirmar senha" />
+			<button style="margin-top:20px">Cadastrar</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Login</h1>
+			<p>
+				Faça o login na sua conta para acessar recursos exclusivos.
+			</p>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Esqueceu sua senha?</a>
+			<button>Login</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Já é um membro?</h1>
+				<p>Faça o login agora e explore os recursos!</p>
+				<button class="ghost" id="signIn">Cadastro</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Não tem uma conta ainda?</h1>
+				<p>Crie uma conta agora e comece a aproveitar!</p>
+				<button class="ghost" id="signUp">Login</button>
+			</div>
+		</div>
+	</div>
+</div>

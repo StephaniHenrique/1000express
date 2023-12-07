@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - express</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <header>
@@ -21,11 +22,11 @@
                 </svg>
             </div>
            <div class="options">
-               <div>Home</div>
-               <div>Unidades</div>
-               <div>Cardápio</div>
+                <div style="cursor: pointer" onclick="scrollToDiv('home');">Home</div>
+                <div style="cursor: pointer" onclick="scrollToDiv('unidade');">Unidades</div>
+                <div style="cursor: pointer" onclick="scrollToDiv('cardapio');">Cardápio</div>
            </div>
-           <button>Entrar no Delivery</button>
+            <button onclick="window.location.href='Login/Index';">Entrar no Delivery</button>
         </nav>
     </header>
     <div class="container">
@@ -34,7 +35,7 @@
         </main>
     </div>
 
-   <footer class="footer">
+   <div class="footer">
         <div class="first_half">
             <div>
                 <div class="title">1000 EXPRESS</div>
@@ -58,7 +59,28 @@
                 ©1000 Express     Todos os direitos reservados
             </div>
         </div>
-    </footer>
+    </div>
+
+    <div class="fundo" id="fundo">
+        <div class="popup" id="popup">
+            <div class="button_close"><i class="fas fa-times" onclick="close_popup('fundo','popup')" style="cursor:pointer"></i></div>
+            <div class="content">
+            <div class="text">Nosso cardápio está disponível para consulta abaixo:</div>
+            <div>
+                <img src="~/src/cardapio.png"/>
+                <div>
+                    <strong>Cardápio 1000 EXPRESS</strong>
+                        <button OnClick="abrirPDF()">Download</button>
+                </div>
+            </div>
+            <div class="text">
+                Caso for pedir por delivery, recomendamos acessar o cardápio
+                pela plataforma para melhor experiência!
+            </div>
+            </div>
+        </div>
+
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

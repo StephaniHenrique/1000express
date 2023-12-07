@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "Acompanhar pedido";
+}
+
+<div class="container_limit">
+    <div class="title">Meus Pedidos</div>
+
+    <div class="card_pedido">
+        <div>
+            <div class="title">Data</div>
+            <div class="info">10 mai. 2023</div>
+        </div>
+        <div>
+            <div class="title">Itens</div>
+            <div class="info_small">Pizza de frango</div>
+        </div>
+        <div>
+            <div class="title">Qtde.</div>
+            <div class="info_small">2</div>
+        </div>
+        <div>
+            <div class="title">Total</div>
+            <div class="info">R$ 50,00</div>
+        </div>
+        <div>
+            <div class="title">Status</div>
+            <div class="status preparando">Preparando</div>
+        </div>
+        <i class="fa-solid fa-chevron-right" style="cursor: pointer;" onclick="open_popup('fundo_pedido_detalhe', 'popup_pedido_detalhe')"></i>
+    </div>
+    <div class="card_pedido">
+        <div>
+            <div class="title">Data</div>
+            <div class="info">10 mai. 2023</div>
+        </div>
+        <div>
+            <div class="title">Itens</div>
+            <div class="info_small">Pizza de frango</div>
+        </div>
+        <div>
+            <div class="title">Qtde.</div>
+            <div class="info_small">2</div>
+        </div>
+        <div>
+            <div class="title">Total</div>
+            <div class="info">R$ 50,00</div>
+        </div>
+        <div>
+            <div class="title">Status</div>
+            <div class="status entregue">Entregue</div>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+    <div class="card_pedido">
+        <div>
+            <div class="title">Data</div>
+            <div class="info">10 mai. 2023</div>
+        </div>
+        <div>
+            <div class="title">Itens</div>
+            <div class="info_small">Pizza de frango</div>
+        </div>
+        <div>
+            <div class="title">Qtde.</div>
+            <div class="info_small">2</div>
+        </div>
+        <div>
+            <div class="title">Total</div>
+            <div class="info">R$ 50,00</div>
+        </div>
+        <div>
+            <div class="title">Status</div>
+            <div class="status cancelado">Cancelado</div>
+        </div>
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+</div>
+
+
+
+<div class="fundo" id="fundo_pedido_detalhe">
+    <div class="popup" id="popup_pedido_detalhe" style="width: 400px;">
+        <div class="button_close"><i class="fas fa-times" onclick="close_popup('fundo_pedido_detalhe','popup_pedido_detalhe')" style="cursor:pointer"></i></div>
+        <div class="content">
+            <div style="width: 100%">
+                <div class="produto">
+                    <div class="primeira_metade">
+                        <div class="title">Nome da comida</div>
+                        <div class="desc">Qtde: 2</div>                    
+                    </div>
+                    <div class="segunda">
+                        R$ 20,00
+                    </div>
+                </div>
+                
+            </div>
+            <div class="valores" style="width: 100%; align-items:center;"> 
+                <div class="line"><p>Subtotal</p> <p>R$ 20,00</p></div>
+                <div class="line"><p>Frete</p> <p>R$ 20,00</p></div>
+                <div class="line"><p>Desconto</p><p>- R$ 10,00</p></div>
+                <div class="line"><p>Total do pedido</p> <p>R$ 40,00</p></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -249,12 +249,36 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\a.jpeg",
+      "PackagePath": "staticwebassets\\src\\a.jpeg"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\banner.jpeg",
       "PackagePath": "staticwebassets\\src\\banner.jpeg"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\banner.jpg",
+      "PackagePath": "staticwebassets\\src\\banner.jpg"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\banner2.jpeg",
       "PackagePath": "staticwebassets\\src\\banner2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio.png",
+      "PackagePath": "staticwebassets\\src\\cardapio.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapiopdf.pdf",
+      "PackagePath": "staticwebassets\\src\\cardapiopdf.pdf"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\carrinho.png",
+      "PackagePath": "staticwebassets\\src\\carrinho.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\comida.png",
+      "PackagePath": "staticwebassets\\src\\comida.png"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\local1.png",
@@ -269,12 +293,32 @@
       "PackagePath": "staticwebassets\\src\\local3.png"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\login1.png",
+      "PackagePath": "staticwebassets\\src\\login1.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\login2.png",
+      "PackagePath": "staticwebassets\\src\\login2.png"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\map.png",
       "PackagePath": "staticwebassets\\src\\map.png"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\nome.png",
       "PackagePath": "staticwebassets\\src\\nome.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\pagamento.png",
+      "PackagePath": "staticwebassets\\src\\pagamento.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\pedido_entregue.svg",
+      "PackagePath": "staticwebassets\\src\\pedido_entregue.svg"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\perfil.png",
+      "PackagePath": "staticwebassets\\src\\perfil.png"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\prop.png",
@@ -295,6 +339,10 @@
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\prop4.png",
       "PackagePath": "staticwebassets\\src\\prop4.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\propaganda_comida.png",
+      "PackagePath": "staticwebassets\\src\\propaganda_comida.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.express.props",

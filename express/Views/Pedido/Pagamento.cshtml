@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<div class="container_limit">
+    <div class="card_dividido">
+        <div class="div_content">
+            <div id="pagamento">
+                <div class="title">Escolha seu método de pagamento</div>
+                <div class="group_buttons">
+                    <div class="button_option" onclick="change_content_pag('cartao', 'pix')">
+                        <div><p>Cartão de crédito</p></div><i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="button_option" onclick="change_content_pag('pix', 'cartao')">
+                        <div>
+                           <p>Pix</p>
+                        </div><i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div_contet">
+            <div id="content_image">
+                <img src="~/src//pagamento.png"/>
+            </div>
+            <div id="content_cartao">
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="" required="">
+                        <label>Nome completo</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="" required="">
+                        <label>CPF</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="" required="">
+                        <label>Número do cartão</label>
+                    </div>
+                    <div class="flex">
+                        <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>Válidade</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>CVV</label>
+                        </div>
+                    </div>
+                  
+                    <div class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Pagar</div>
+                </form>
+            </div>
+            <div id="content_pix">
+                <div class="title_thin">Escaneie o código QR para pagar seu pedido via PIX</div>
+                <div class="qrcode">                <svg xmlns="http://www.w3.org/2000/svg" width="289" height="289" viewBox="0 0 289 289" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 48.5V96.5H48.5H96.5V48.5V0.5H48.5H0.5V48.5ZM110.214 14.2143V27.9286H117.071H123.929V41.6429V55.3571H117.071H110.214V110.214V165.071H89.6429H69.0714V171.929V178.786H89.6429H110.214V185.643V192.5H117.071H123.929V199.357V206.214H117.071H110.214V213.071V219.929H117.071H123.929V233.643V247.357H117.071H110.214V267.929V288.5H130.786H151.357V281.643V274.786H144.5H137.643V267.929V261.071H130.786H123.929V254.214V247.357H137.643H151.357V240.5V233.643H185.643H219.929V240.5V247.357H206.214H192.5V254.214V261.071H199.357H206.214V267.929V274.786H199.357H192.5V281.643V288.5H199.357H206.214V281.643V274.786H219.929H233.643V281.643V288.5H240.5H247.357V274.786V261.071H267.929H288.5V254.214V247.357H274.786H261.071V240.5V233.643H267.929H274.786V226.786V219.929H267.929H261.071V226.786V233.643H254.214H247.357V219.929V206.214H254.214H261.071V192.5V178.786H267.929H274.786V171.929V165.071H267.929H261.071V171.929V178.786H254.214H247.357V165.071V151.357H254.214H261.071V144.5V137.643H254.214H247.357V130.786V123.929H240.5H233.643V117.071V110.214H199.357H165.071V103.357V96.5H171.929H178.786V89.6429V82.7857H171.929H165.071V89.6429V96.5H158.214H151.357V82.7857V69.0714H144.5H137.643V82.7857V96.5H130.786H123.929V75.9286V55.3571H130.786H137.643V48.5V41.6429H144.5H151.357V48.5V55.3571H158.214H165.071V62.2143V69.0714H171.929H178.786V55.3571V41.6429H171.929H165.071V34.7857V27.9286H171.929H178.786V14.2143V0.5H144.5H110.214V14.2143ZM192.5 48.5V96.5H240.5H288.5V48.5V0.5H240.5H192.5V48.5ZM82.7857 48.5V82.7857H48.5H14.2143V48.5V14.2143H48.5H82.7857V48.5ZM151.357 21.0714V27.9286H144.5H137.643V21.0714V14.2143H144.5H151.357V21.0714ZM274.786 48.5V82.7857H240.5H206.214V48.5V14.2143H240.5H274.786V48.5ZM27.9286 48.5V69.0714H48.5H69.0714V48.5V27.9286H48.5H27.9286V48.5ZM219.929 48.5V69.0714H240.5H261.071V48.5V27.9286H240.5H219.929V48.5ZM0.5 123.929V137.643H7.35714H14.2143V130.786V123.929H27.9286H41.6429V144.5V165.071H27.9286H14.2143V158.214V151.357H7.35714H0.5V165.071V178.786H27.9286H55.3571V165.071V151.357H75.9286H96.5V144.5V137.643H82.7857H69.0714V130.786V123.929H82.7857H96.5V117.071V110.214H82.7857H69.0714V117.071V123.929H55.3571H41.6429V117.071V110.214H21.0714H0.5V123.929ZM261.071 117.071V123.929H267.929H274.786V137.643V151.357H281.643H288.5V130.786V110.214H274.786H261.071V117.071ZM192.5 137.643V151.357H206.214H219.929V158.214V165.071H226.786H233.643V171.929V178.786H226.786H219.929V171.929V165.071H199.357H178.786V178.786V192.5H171.929H165.071V185.643V178.786H158.214H151.357V185.643V192.5H137.643H123.929V185.643V178.786H130.786H137.643V171.929V165.071H130.786H123.929V151.357V137.643H137.643H151.357V130.786V123.929H171.929H192.5V137.643ZM219.929 130.786V137.643H213.071H206.214V130.786V123.929H213.071H219.929V130.786ZM247.357 144.5V151.357H240.5H233.643V144.5V137.643H240.5H247.357V144.5ZM165.071 158.214V165.071H171.929H178.786V158.214V151.357H171.929H165.071V158.214ZM0.5 240.5V288.5H48.5H96.5V240.5V192.5H48.5H0.5V240.5ZM206.214 199.357V206.214H219.929H233.643V213.071V219.929H219.929H206.214V213.071V206.214H199.357H192.5V199.357V192.5H199.357H206.214V199.357ZM274.786 199.357V206.214H281.643H288.5V199.357V192.5H281.643H274.786V199.357ZM82.7857 240.5V274.786H48.5H14.2143V240.5V206.214H48.5H82.7857V240.5ZM137.643 213.071V219.929H130.786H123.929V213.071V206.214H130.786H137.643V213.071ZM178.786 213.071V219.929H171.929H165.071V213.071V206.214H171.929H178.786V213.071ZM27.9286 240.5V261.071H48.5H69.0714V240.5V219.929H48.5H27.9286V240.5ZM165.071 267.929V274.786H171.929H178.786V267.929V261.071H171.929H165.071V267.929ZM274.786 281.643V288.5H281.643H288.5V281.643V274.786H281.643H274.786V281.643Z" fill="#101F10" />
+                </svg>
+                </div>
+
+                <div class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Confirmar pagamento</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Login Page";
+}
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+<div class="cont">
+
+    <div class="form sign-in">
+        <h2>Login</h2>
+        <div class="desc">Entre com sua conta existente</div>
+       
+            <input type="email" placeholder="E-mail" />
+            <input type="password" placeholder="Senha"/>
+        <p class="forgot-pass">Esqueceu a senha?</p>
+        <button type="button" class="submit" onclick="window.location.href='@Url.Action("Index", "Delivery")';">Login</button>
+    </div>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2 style="color:#fff">Novo aqui?</h2>
+                <p>
+                    Cadastre-se e descubra muitas novas oportunidades!
+                </p>
+            </div>
+            <div class="img__text m--in">
+                <h2 style="color:#fff">Um de nós?</h2>
+                <p>
+                    Se você já possui uma conta, basta fazer login. Sentimos sua falta!
+                </p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Cadastrar</span>
+                <span class="m--in">Login</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>Cadastro</h2>
+            <div class="desc">Preencha todos os campos corretamente</div>
+                <input type="text" placeholder="Nome Completo"/>
+                <input type="email" placeholder="CPF"/>
+                <input type="email" placeholder="E-mail"/>
+                <input type="email" placeholder="Senha"/>
+                <input type="password" placeholder="Confirmar senha"/>
+            <button type="button" class="submit">Cadastrar</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,92 @@
+﻿
+@{
+}
+
+<div class="container_limit">
+    <div class="grid" id="content">
+        <div class="acompanha">
+            <div class="title">Acompanhe seu pedido</div>
+            <div class="card">
+                <div class="title_acompanha">Status do pedido</div>
+                <ul class="steps">
+                    <li class="step step--complete step--active">
+                        <span class="step__icon">1</span>
+                        <span class="step__label">Pedido</span>
+                    </li>
+                    <li class="step step--complete step--active">
+                        <span class="step__icon">2</span>
+                        <span class="step__label">Pagamento</span>
+                    </li>
+                    <li class="step step--incomplete step--active">
+                        <span class="step__icon">3</span>
+                        <span class="step__label">Preparo</span>
+                    </li>
+                    <li class="step step--incomplete step--inactive">
+                        <span class="step__icon">4</span>
+                        <span class="step__label">Entrega</span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <div class="resumo">
+                <div class="dados_compra">
+                    <div class="title">Resumo</div>
+                </div>
+                <div class="lista_produtos">
+                    <div><p>Pizza de frango</p> <p>2</p></div>
+                    <div><p>Cola cola</p> <p>1</p></div>
+                </div>
+                <div class="valores">
+                    <div><p>Subtotal</p> <p>R$ 20,00</p></div>
+                    <div><p>Frete</p> <p>R$ 20,00</p></div>
+                    <div><p>Total do pedido</p> <p>R$ 40,00</p></div>
+                </div>
+            </div>
+            <div onclick="changeToEmpty()" class="button">Recebi meu pedido</div>
+        </div>
+    </div>
+    <div class="empty" id="empty">
+        <div class="title">Obrigada por confiar no nosso serviço!</div>
+        <img src="~/src/pedido_entregue.svg"/>
+        <div class="button" onclick="open_popup('fundo_avalia','popup_avalia')">Avaliar o antendimento </div>
+    </div>
+</div>
+
+
+<div class="fundo" id="fundo_avalia">
+    <div class="popup" id="popup_avalia">
+        <div class="content">
+            <div class="title" style="margin-top:20px">Avalie-nos!</div>
+            <textarea id="myTextarea" name="myTextarea" rows="4" cols="50">
+                Comente sua avaliação
+            </textarea>
+            <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked />
+                <label for="cm_star-1">
+                    <i class="fas fa-star"></i>
+                </label>
+                <input type="radio" id="cm_star-1" name="fb" value="1" />
+                <label for="cm_star-2">
+                    <i class="fas fa-star"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2" />
+                    <label for="cm_star-3">
+                        <i class="fas fa-star"></i>
+                    </label>
+                <input type="radio" id="cm_star-3" name="fb" value="3" />
+                    <label for="cm_star-4">
+                        <i class="fas fa-star"></i>
+                    </label>
+                <input type="radio" id="cm_star-4" name="fb" value="4" />
+                    <label for="cm_star-5">
+                        <i class="fas fa-star"></i>
+                    </label>
+                <input type="radio" id="cm_star-5" name="fb" value="5" />
+            </div>
+            <div class="grid_button">
+                <button onclick="close_popup('fundo_avalia','popup_avalia')">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>

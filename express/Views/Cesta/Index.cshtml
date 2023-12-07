@@ -1,0 +1,149 @@
+﻿
+@{
+}
+
+<div class="container_limit" id="content">
+<div class="title">Meu carrinho de produtos</div>
+
+<div class="grid">
+    <div class="lista_produtos">
+        <div class="cabecalho">
+            <p>Itens</p>
+            <p>Qtde</p>
+            <p>Subtotal</p>
+            <div></div>
+        </div>
+        <div class="produto" id="produto_id">
+            <div class="flex">
+            <div class="produtoImg">
+                <img src="~/src/comida.png"/>
+            </div>
+            <div class="info_produto">
+                <div class="title">Comida</div>
+                <div class="obs">Observações breves</div>
+            </div>
+            </div>
+            <div class="qtde">
+                    <button onclick="diminui('number')"><i class="fas fa-minus"></i></button> <div id="number">1</div> <button onclick="aumenta(number)"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="valor">
+                R$ 20,00
+            </div>
+                <div class="circle" id="id" onclick="open_popup('fundo_Rem_Pedido','popup_Rem_Pedido')"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="produto">
+            <div class="flex">
+            <div class="produtoImg">
+                <img src="~/src/comida.png" />
+            </div>
+            <div class="info_produto">
+                <div class="title">Comida</div>
+                <div class="obs">Observações breves</div>
+            </div>
+            </div>
+            <div class="qtde">
+                - 1 +
+            </div>
+            <div class="valor">
+                R$ 20,00
+            </div>
+            <div class="circle"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="produto">
+            <div class="flex">
+            <div class="produtoImg">
+                <img src="~/src/comida.png" />
+            </div>
+            <div class="info_produto">
+                <div class="title">Comida</div>
+                <div class="obs">Observações breves</div>
+            </div>
+            </div>
+            <div class="qtde">
+                - 1 +
+            </div>
+            <div class="valor">
+                R$ 20,00
+            </div>
+            <div class="circle"><i class="fa-solid fa-trash"></i></div>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: column">
+    <div class="resumo">
+        <div class="dados_compra">
+            <div class="title">Resumo</div>
+        </div>
+            <div class="frete"><p>Calcular frete</p><i onclick="estende('frete')" id="chevron_frete" class="fa-solid fa-chevron-down"></i></div>
+            <div id="frete">
+                <input type="text" placeholder="CEP" />
+                <button onclick="verifica_cep()" id="button_frete"><i class="fas fa-check-circle"></i></button>
+            </div>
+            <div id="result_frete">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="30" viewBox="0 0 45 30" fill="none">
+                        <mask id="mask0_132_7836" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="14" y="21" width="31" height="9">
+                            <path d="M14.7939 21.6342H44.4525V30H14.7939V21.6342Z" fill="white" />
+                        </mask>
+                        <g mask="url(#mask0_132_7836)">
+                            <path d="M36.102 25.8388C36.102 23.5446 37.9587 21.6776 40.2594 21.6776C42.5514 21.6776 44.4168 23.5358 44.4168 25.8388C44.4168 28.1326 42.5601 30 40.2594 30C37.9675 30 36.102 28.1326 36.102 25.8388ZM18.966 30C21.2579 30 23.1234 28.1418 23.1234 25.8388C23.1234 23.5446 21.2667 21.6776 18.966 21.6776C16.6653 21.6776 14.8086 23.5358 14.8086 25.8388C14.8086 28.1326 16.6741 30 18.966 30Z" fill="#542402" />
+                        </g>
+                        <path d="M31.7582 21.3842C31.7582 21.3842 31.3676 22.4066 32.3981 22.4066C34.7254 22.4066 34.7075 23.7672 34.7075 23.7672H29.6885L30.3104 21.3842H31.7582Z" fill="#FF914D" />
+                        <path d="M35.0187 26.6658C34.1303 24.3361 35.0274 21.6509 37.2485 20.3525C39.4691 19.0545 42.2496 19.5968 43.8399 21.5087L35.0187 26.6658Z" fill="#FF914D" />
+                        <path d="M26.6235 18.6101C24.7314 21.971 27.2101 23.7671 27.2101 23.7671H32.4601C33.1175 23.5179 34.5744 22.0419 35.5248 19.8548C36.4753 17.6673 33.1883 10.8033 33.1883 10.8033C34.5744 9.05143 38.1899 9.85174 38.1899 9.85174V13.5773L36.1022 12.9905L39.0957 19.1257L33.5527 25.8388H14.1514L18.1666 18.6101H26.6235Z" fill="#542402" />
+                        <path d="M38.1899 25.8388C38.1899 24.6917 39.1137 23.7672 40.2597 23.7672C41.4056 23.7672 42.3294 24.6917 42.3294 25.8388C42.3294 26.9859 41.4056 27.9104 40.2597 27.9104C39.1137 27.9104 38.1899 26.9859 38.1899 25.8388ZM18.9662 27.9104C20.1122 27.9104 21.036 26.9859 21.036 25.8388C21.036 24.6917 20.1122 23.7672 18.9662 23.7672C17.8203 23.7672 16.8965 24.6917 16.8965 25.8388C16.8965 26.9859 17.8203 27.9104 18.9662 27.9104Z" fill="#FFBD59" />
+                        <path d="M28.0085 18.6101H16.265V16.3514H28.0085V18.6101ZM19.6228 19.7481C16.4601 19.7481 13.1289 22.4779 13.1289 25.8388H24.5797C24.5797 21.713 23.8156 19.7481 19.6228 19.7481ZM31.1266 10.4386C30.2737 10.003 29.5809 5.69054 27.0493 5.84184C24.5085 5.98399 23.4159 11.2389 23.1228 12.6261L27.058 12.9905C27.3511 11.5324 28.2219 9.66501 28.2219 9.66501C28.2219 9.66501 28.7284 12.1814 30.0073 12.4036C30.7535 12.5282 32.1663 12.7062 33.223 12.8304L33.4807 10.9455C32.619 10.8476 31.5885 10.67 31.1266 10.4386Z" fill="#FF914D" />
+                        <mask id="mask1_132_7836" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="25" y="0" width="11" height="14">
+                            <path d="M25.623 0H35.2816V13.0488H25.623V0Z" fill="white" />
+                        </mask>
+                        <g mask="url(#mask1_132_7836)">
+                            <path d="M30.7807 2.55183C30.7807 3.9657 29.6348 5.10366 28.2312 5.10366C26.8188 5.10366 25.6816 3.95656 25.6816 2.55183C25.6816 1.1471 26.8188 0 28.2312 0C29.6348 0 30.7807 1.1471 30.7807 2.55183ZM34.8672 11.0968C34.8672 11.0968 34.2453 11.0522 33.4903 10.9543L33.2327 12.8392C33.9964 12.9284 34.5742 12.9905 34.5742 12.9905C35.3024 12.3327 35.4092 12.1902 34.8672 11.0968Z" fill="#FFBD59" />
+                        </g>
+                        <path d="M20.787 16.3514H11.6018V7.44208H20.787V16.3514ZM15.0396 19.1258C15.0396 19.0011 14.9329 18.8944 14.8087 18.8944H7.73743C7.61319 18.8944 7.50648 19.0011 7.50648 19.1258C7.50648 19.25 7.61319 19.3567 7.73743 19.3567H14.8087C14.9417 19.3567 15.0396 19.25 15.0396 19.1258ZM12.7123 21.0194C12.7123 20.8952 12.6056 20.7885 12.4813 20.7885H1.75877C1.63453 20.7885 1.52782 20.8952 1.52782 21.0194C1.52782 21.1441 1.63453 21.2508 1.75877 21.2508H12.4813C12.6056 21.2508 12.7123 21.1528 12.7123 21.0194ZM15.0396 24.3095C15.0396 24.1848 14.9329 24.0781 14.8087 24.0781H5.98742C5.86319 24.0781 5.75648 24.1848 5.75648 24.3095C5.75648 24.4341 5.86319 24.5408 5.98742 24.5408H14.8087C14.9417 24.5408 15.0396 24.4341 15.0396 24.3095ZM17.1273 22.9047C17.1273 22.7801 17.0206 22.6734 16.8963 22.6734H8.97218C8.84794 22.6734 8.74124 22.7801 8.74124 22.9047C8.74124 23.029 8.84794 23.1357 8.97218 23.1357H16.8963C17.0293 23.1357 17.1273 23.029 17.1273 22.9047ZM10.678 14.2355C10.678 14.1109 10.5713 14.0042 10.447 14.0042H0.230945C0.106707 14.0042 0 14.1109 0 14.2355C0 14.3598 0.106707 14.4665 0.230945 14.4665H10.4379C10.5713 14.4665 10.678 14.3598 10.678 14.2355ZM10.2603 12.1902C10.2603 12.0659 10.1536 11.9592 10.0293 11.9592H3.28697C3.16235 11.9592 3.05602 12.0659 3.05602 12.1902C3.05602 12.3148 3.16235 12.4215 3.28697 12.4215H10.0293C10.1536 12.4215 10.2603 12.3148 10.2603 12.1902Z" fill="#FFBD59" />
+                        <mask id="mask2_132_7836" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="0" width="12" height="22">
+                            <path d="M22.9893 0H33.038V21.439H22.9893V0Z" fill="white" />
+                        </mask>
+                        <g mask="url(#mask2_132_7836)">
+                            <path d="M32.3801 1.59146L25.6819 2.67645C25.6819 2.63186 25.6732 2.59642 25.6732 2.55183C25.6732 1.1471 26.8191 0 28.2315 0C29.3066 0 30.2216 0.666921 30.5947 1.60061L32.3355 1.3247L32.3801 1.59146ZM23.1236 12.6261C22.8306 14.013 23.1945 16.3514 24.5806 16.3514H28.0093C30.0527 16.3514 30.6389 18.3255 29.7597 21.3841H32.0158C33.1084 17.1517 33.4727 15.907 32.0158 15.178C30.5588 14.4486 26.7658 14.4486 27.0588 12.9905L23.1236 12.6261Z" fill="#542402" />
+                        </g>
+                    </svg>
+                R$10,00
+            </div>
+            <div class="valores">
+            <div><p>Subtotal</p> <p>R$ 20,00</p></div>
+            <div><p>Frete</p> <p>R$ 20,00</p></div>
+            <div id="desconto_concedido"><p>Desconto</p><p id="valor_desconto">-R$ 10,00</p></div>
+            <div><p>Total do pedido</p> <p>R$ 40,00</p></div>
+        </div>
+                <div class="frete"><p>Aplicar cupom de desconto</p><i onclick="estende('cupom')" id="chevron_cupom" class="fa-solid fa-chevron-down"></i></div>
+                <div id="cupom">
+                    <input type="text" placeholder="Digite o código" />
+                    <button id="button_cupom" onclick="verifica_cupom()"><i class="fas fa-check-circle"></i></button>
+                </div>
+    </div>
+            <div class="button" onclick="window.location.href='@Url.Action("Pagamento", "Pedido")'">Finalizar compra</div>
+    </div>
+</div>
+</div>
+
+<div class="container_limit">
+    <div class="empty" id="empty">
+     <div class="title">Seu carrinho está vazio :(</div>
+     <div class="desc">Entre no delivery para começar seu pedido</div>
+     <img src="~/src/carrinho.png"/>
+ </div>
+</div>
+
+
+<div class="fundo" id="fundo_Rem_Pedido">
+    <div class="popup" id="popup_Rem_Pedido">
+        <div class="content">
+            <div class="title" style="margin-top:20px">Remover item</div>
+            <div class="text">
+                Você tem certeza que deseja remover esse item da sacola?
+            </div>
+            <div class="grid_button">
+                <button onclick="close_popup('fundo_Rem_Pedido','popup_Rem_Pedido')" class="button_voltar">Voltar</button>
+                <button onclick="remove_item()" style="background-color:#DD2323">Remover</button>
+            </div>
+        </div>
+    </div>
+</div>

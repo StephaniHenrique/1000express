@@ -4,6 +4,8 @@
 
 
 <div class="banner">
+    
+<div class="container_banner" id="home">
     <div class="text">
         <div class="name">
             <img src="~/src/nome.png" />
@@ -320,9 +322,10 @@
         <path d="M407.594 253.207C405.138 253.072 399.911 263.931 404.722 263.946C408.657 263.946 410.782 253.372 407.594 253.207Z" fill="white" />
         <path opacity="0.5" d="M220.067 135.18C214.035 157.425 234.599 174.683 250.108 185.918C272.294 201.118 296.964 211.677 321.491 222.101C296.002 214.11 270.815 203.851 248.542 188.351C232.746 176.921 211.838 157.455 220.067 135.18Z" fill="white" />
     </svg>
-
+    </div>
 </div>
 
+<div class="container_limit">
 <div class="scroller">
     <div class="title">Promoções</div>
     <div class="space">
@@ -331,11 +334,9 @@
         <div class="img tree"></div>
         <div class="img four"></div>
     </div>
-
-
 </div>
 
-<div class="card_find">
+<div class="card_find" id="unidade">
     <div class="info">
         <div class="title">Encontrar <br /> <strong>Restaurantes</strong></div>
         <div class="custom-select">
@@ -351,21 +352,24 @@
         <img src="~/src/map.png" />
     </div>
 </div>
-<div class="card_prop">
+</div>
+<div class="card_prop" id="cardapio">
     <div class="text">
         <div class="title">Cardápio</div>
         <div class="description">Variedade de sabores que <br /> agradam a todos os paladares</div>
-        <button>Confira</button>
+        <button onclick="open_popup('fundo','popup')">Confira</button>
     </div>
 </div>
+<div class="container_limit">
 <div class="card_vouncher">
     <div class="text">
         <div class="description">
             Utilize o cupom 1000EXPRESS<br />
             e ganhe 15% de desconto!
         </div>
-        <button>Peça agora!</button>
+            <button onclick="window.location.href='Login/Index';">Peça agora!</button>
     </div>
+</div>
 </div>
 
 

@@ -1,19 +1,20 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Login Page";
 }
 <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+<script src="~/js/login.js" asp-append-version="true"></script>
 
 <div class="cont">
 
     <div class="form sign-in">
         <h2>Login</h2>
         <div class="desc">Entre com sua conta existente</div>
-       
-            <input type="email" placeholder="E-mail" />
-            <input type="password" placeholder="Senha"/>
+
+        <input type="email" placeholder="E-mail" id="emailLogin" />
+        <input type="password" placeholder="Senha" id="senhaLogin" />
         <p class="forgot-pass">Esqueceu a senha?</p>
-        <button type="button" class="submit" onclick="window.location.href='@Url.Action("Index", "Delivery")';">Login</button>
+        <button type="button" class="submit" onclick="login()">Login</button>
     </div>
     <div class="sub-cont">
         <div class="img">
@@ -37,12 +38,12 @@
         <div class="form sign-up">
             <h2>Cadastro</h2>
             <div class="desc">Preencha todos os campos corretamente</div>
-                <input type="text" placeholder="Nome Completo"/>
-                <input type="email" placeholder="CPF"/>
-                <input type="email" placeholder="E-mail"/>
-                <input type="email" placeholder="Senha"/>
-                <input type="password" placeholder="Confirmar senha"/>
-            <button type="button" class="submit">Cadastrar</button>
+            <input type="text" placeholder="Nome Completo" id="nomeCad" />
+            <input type="email" placeholder="CPF" id="cpfCad" />
+            <input type="email" placeholder="E-mail" id="emailCad" />
+            <input type="password" placeholder="Senha" id="senhaCad" />
+            <input type="password" placeholder="Confirmar senha" id="confirmaSenha" />
+            <button type="button" class="submit" onclick="cadastrarUsuario()">Cadastrar</button>
         </div>
     </div>
 </div>

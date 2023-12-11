@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\produto.js",
+      "PackagePath": "staticwebassets\\js\\produto.js"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -267,6 +275,114 @@
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio.png",
       "PackagePath": "staticwebassets\\src\\cardapio.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\1.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\10.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\10.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\11.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\11.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\12.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\12.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\13.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\13.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\14.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\14.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\15.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\15.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\16.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\16.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\17.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\17.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\18.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\18.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\19.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\19.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\2.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\20.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\20.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\21.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\21.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\22.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\22.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\23.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\23.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\24.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\24.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\25.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\25.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\26.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\26.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\27.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\27.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\3.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\4.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\5.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\6.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\7.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\8.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\8.png"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapio_imagens\\9.png",
+      "PackagePath": "staticwebassets\\src\\cardapio_imagens\\9.png"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\src\\cardapiopdf.pdf",

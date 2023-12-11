@@ -3,6 +3,9 @@
     ViewData["Title"] = "Delivery";
 }
 
+
+<script src="~/js/produto.js" asp-append-version="true"></script>
+
 <div class="propaganda">
 </div>
 <div class="container_limit">
@@ -18,51 +21,8 @@
 
 <div class="scroller">
     <div class="title">Faça seu pedido</div>
-    <div class="cards">
-            <div class="card">
-                <div class="img_card">
-                    <img src="~/src/comida.png" />
-                </div>
-                <div class="title">Comida</div>
-                <div class="desc">Comida boa e quentinha, feita com carinho e tempero. Possui carne, ovos e muito amor, sei lá</div>
-                <div class="flex">
-                    <div class="valor">R$ 20,00</div>
-                    <div class="button" onclick="open_popup('fundo_Add_Pedido','popup_Add_Pedido')">Adicionar</div>
-                </div>
-         </div>
-        <div class="card" >
-            <div class="img_card">
-                <img src="~/src/comida.png" />
-            </div>
-            <div class="title">Comida</div>
-            <div class="desc">Comida boa e quentinha, feita com carinho e tempero. Possui carne, ovos e muito amor, sei lá</div>
-            <div class="flex">
-                <div class="valor">R$ 20,00</div>
-                <div class="button">Adicionar</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="img_card">
-                <img src="~/src/comida.png" />
-            </div>
-            <div class="title">Comida</div>
-            <div class="desc">Comida boa e quentinha, feita com carinho e tempero. Possui carne, ovos e muito amor, sei lá</div>
-            <div class="flex">
-                <div class="valor">R$ 20,00</div>
-                <div class="button">Adicionar</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="img_card">
-                <img src="~/src/comida.png" />
-            </div>
-            <div class="title">Comida</div>
-            <div class="desc">Comida boa e quentinha, feita com carinho e tempero. Possui carne, ovos e muito amor, sei lá</div>
-            <div class="flex">
-                <div class="valor">R$ 20,00</div>
-                <div class="button">Adicionar</div>
-            </div>
-        </div>
+    <div class="cards" id="cards">
+         
     </div>
     <!--<div class="center">
             <div class="text" onclick="window.location.href='@Url.Action("Produtos", "Delivery")'" style="cursor:pointer">Ver mais +</div>

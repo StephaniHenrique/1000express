@@ -1,4 +1,5 @@
-﻿function pedido_entregue() {
+﻿
+function pedido_entregue() {
     content = document.getElementById("acompanha");
     empty = document.getElementById("entregue");
     console.log(empty);

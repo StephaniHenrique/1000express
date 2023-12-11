@@ -272,6 +272,6 @@ $(document).ready(function () {
 
 
 function adiciona_produto(id) {
-	localStorage.setItem(produtoAdd, id);
+	localStorage.setItem('produtoAdd', id);
 	open_popup('fundo_Add_Pedido','popup_Add_Pedido')
 }

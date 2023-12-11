@@ -29,27 +29,16 @@
             </div>
             <div id="content_cartao">
                 <form>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                        <label>Nome completo</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                        <label>CPF</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="text" name="" required="">
-                        <label>Número do cartão</label>
-                    </div>
+                    <input type="text" placeholder="Nome completo" id="Nome" />
+                    <input type="text" placeholder="CPF" id="cpf" />
+                    <input type="text" placeholder="Número do cartão" id="cartao" />
+        
                     <div class="flex">
-                        <div class="user-box">
-                            <input type="text" name="" required="">
-                            <label>Válidade</label>
-                        </div>
-                        <div class="user-box">
-                            <input type="text" name="" required="">
-                            <label>CVV</label>
-                        </div>
+
+                        <input type="text" placeholder="Válidade" id="val" />
+
+                        <input type="text" placeholder="CVV" id="cvv" />
+                
                     </div>
                   
                     <div class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Pagar</div>

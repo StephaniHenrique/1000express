@@ -5,7 +5,7 @@ var funcaoChamada = false;
 $(document).ready(function () {
 	var token = localStorage.getItem("token");
 	var userEmail = localStorage.getItem("email");
-	console.log(userEmail);
+
 	fetch(urlBase + '/carts', {
 		method: 'POST',
 		headers: {

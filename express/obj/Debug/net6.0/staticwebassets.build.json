@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7qtHLO81T+sOBloOv1AzWYN/LQes5JG1kKoFeT6FL38=",
+  "Hash": "SZThVbpRPEjDdyvaeuwaV3ZQM+hpbddGhn+OcjqikC4=",
   "Source": "express",
   "BasePath": "_content/express",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\cesta.js",
+      "SourceId": "express",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\",
+      "BasePath": "_content/express",
+      "RelativePath": "js/cesta.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\cesta.js"
     },
     {
       "Identity": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\login.js",

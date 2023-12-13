@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\cesta.js",
+      "PackagePath": "staticwebassets\\js\\cesta.js"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },

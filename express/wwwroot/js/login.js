@@ -1,18 +1,21 @@
-const urlBase = "http://192.168.15.5:8080";
+const urlBase = "http://localhost:8080";
+
 
 async function login() {
 
-    var username = document.getElementById("emailLogin").value;
+    var email = document.getElementById("emailLogin").value;
     var password = document.getElementById("senhaLogin").value;
 
-    const response = await fetch(url + '/user/authenticate', {
+
+    const response = await fetch(urlBase + '/user/authenticate', {
         method: 'POST',
         headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            username: username,
-            password: password, 
+            email: email,
+            password: password,
         }),
     });
 
@@ -21,6 +24,7 @@ async function login() {
         const token = data.token;
 
         localStorage.setItem('token', token);
+        localStorage.setItem('email', email);
         window.location.href = '/Delivery';
     } else {
         alert('Erro ao fazer login. Verifique suas credenciais');
@@ -28,7 +32,7 @@ async function login() {
 
 }
 
-function cadastrarUsuario() {
+async function cadastrarUsuario() {
     var nome = document.getElementById('nomeCad').value;
     var cpf = document.getElementById('cpfCad').value;
     var email = document.getElementById('emailCad').value;
@@ -55,35 +59,36 @@ function cadastrarUsuario() {
         return; 
     }
 
-    var novoUsuario = {
-        email: nome,
-        password: senha,
-        name: nome,
-        cpf: cpf,
-        role: "USER"
 
-    };
-
-    console.log(novoUsuario);
-
-    fetch(urlBase +'/user/register', {
+    const response = await fetch(urlBase + '/user/register', {
         method: 'POST',
         headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(novoUsuario),
-    })
-        .then(response => {
-            if (response.ok) {
-                alert('Usuário cadastrado com sucesso!');
-            } else {
-                alert('Erro ao cadastrar usuário.');
-            }
-        })
-        .catch(error => {
-            alert('Erro na requisição:', error);
-        });
+        body: JSON.stringify({
+            email: email,
+            password: senha,
+            name: nome, 
+            cpf: cpf,
+            role: "USER"
+        }),
+    });
+
+    if (response.ok) {
+        alert("Cadastro realizado com sucesso!");
+    } else {
+        alert('Erro ao fazer login. Verifique suas credenciais');
+    }
+
+    document.getElementById('nomeCad').value = '';
+    document.getElementById('cpfCad').value = '';
+    document.getElementById('emailCad').value = '';
+    document.getElementById('senhaCad').value = '';
+    document.getElementById('confirmaSenha').value = '';
+
 }
+
 
 function validarCPF(cpf) {
     // Remove caracteres não numéricos

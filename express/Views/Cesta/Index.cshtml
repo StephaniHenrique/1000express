@@ -2,6 +2,8 @@
 @{
 }
 
+<script src="~/js/cesta.js"></script>
+
 <div class="container_limit" id="content">
 <div class="title" style="margin-top: 90px;">Meu carrinho de produtos</div>
 
@@ -13,60 +15,7 @@
             <p>Subtotal</p>
             <div></div>
         </div>
-        <div class="produto" id="produto_id">
-            <div class="flex">
-            <div class="produtoImg">
-                <img src="~/src/comida.png"/>
-            </div>
-            <div class="info_produto">
-                <div class="title">Comida</div>
-                <div class="obs">Observações breves</div>
-            </div>
-            </div>
-            <div class="qtde">
-                    <button onclick="diminui('number')"><i class="fas fa-minus"></i></button> <div id="number">1</div> <button onclick="aumenta(number)"><i class="fas fa-plus"></i></button>
-            </div>
-            <div class="valor">
-                R$ 20,00
-            </div>
-                <div class="circle" id="id" onclick="open_popup('fundo_Rem_Pedido','popup_Rem_Pedido')"><i class="fa-solid fa-trash"></i></div>
-        </div>
-        <div class="produto">
-            <div class="flex">
-            <div class="produtoImg">
-                <img src="~/src/comida.png" />
-            </div>
-            <div class="info_produto">
-                <div class="title">Comida</div>
-                <div class="obs">Observações breves</div>
-            </div>
-            </div>
-            <div class="qtde">
-                - 1 +
-            </div>
-            <div class="valor">
-                R$ 20,00
-            </div>
-            <div class="circle"><i class="fa-solid fa-trash"></i></div>
-        </div>
-        <div class="produto">
-            <div class="flex">
-            <div class="produtoImg">
-                <img src="~/src/comida.png" />
-            </div>
-            <div class="info_produto">
-                <div class="title">Comida</div>
-                <div class="obs">Observações breves</div>
-            </div>
-            </div>
-            <div class="qtde">
-                - 1 +
-            </div>
-            <div class="valor">
-                R$ 20,00
-            </div>
-            <div class="circle"><i class="fa-solid fa-trash"></i></div>
-        </div>
+        <div id="produtos"></div>
     </div>
     <div style="display: flex; flex-direction: column">
     <div class="resumo">
@@ -75,7 +24,14 @@
         </div>
             <div class="frete"><p>Calcular frete</p><i onclick="estende('frete')" id="chevron_frete" class="fa-solid fa-chevron-down"></i></div>
             <div id="frete">
-                <input type="text" placeholder="CEP" />
+                <div id="endereco" class="endereco">
+                <input type="text" placeholder="CEP" id="cep" onblur="verifica_input()"/>
+                        <input type="text" placeholder="Endereço" id="log" onblur="verifica_input()" />
+                 <div style="display: flex; gap: 10px">
+                            <input type="text" placeholder="Número" id="num" onblur="verifica_input()" />
+                        <input type="text" placeholder="Comp" id="comp"/>
+                 </div>
+                    </div>
                 <button onclick="verifica_cep()" id="button_frete"><i class="fas fa-check-circle"></i></button>
             </div>
             <div id="result_frete">
@@ -108,18 +64,17 @@
                 R$10,00
             </div>
             <div class="valores">
-            <div><p>Subtotal</p> <p>R$ 20,00</p></div>
-            <div><p>Frete</p> <p>R$ 20,00</p></div>
-            <div id="desconto_concedido"><p>Desconto</p><p id="valor_desconto">-R$ 10,00</p></div>
-            <div><p>Total do pedido</p> <p>R$ 40,00</p></div>
+            <div><p>Subtotal</p> <p id="valor_subtotal">R$ 0,00</p></div>
+            <div id="desconto_concedido"><p>Desconto</p><p id="valor_desconto">-R$ 0,00</p></div>
+            <div><p>Total do pedido</p> <p id="total_pedido">R$ 0,00</p></div>
         </div>
                 <div class="frete"><p>Aplicar cupom de desconto</p><i onclick="estende('cupom')" id="chevron_cupom" class="fa-solid fa-chevron-down"></i></div>
                 <div id="cupom">
-                    <input type="text" placeholder="Digite o código" />
+                    <input type="text" placeholder="Digite o código" id="codigo_cupom"/>
                     <button id="button_cupom" onclick="verifica_cupom()"><i class="fas fa-check-circle"></i></button>
                 </div>
     </div>
-            <div class="button" onclick="window.location.href='@Url.Action("Pagamento", "Pedido")'">Finalizar compra</div>
+            <button class="button" id="botao_continuar" disabled onclick="avanca_pedido()">Finalizar compra</button>
     </div>
 </div>
 </div>

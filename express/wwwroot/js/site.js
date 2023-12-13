@@ -124,53 +124,34 @@ function open_popup(fundo, popup) {
     }
 }
 
-function aumenta(number) {
-    var qtde = document.getElementById('number');
-    var number = parseInt(qtde.textContent);
-    number++;
-    qtde.innerText = number;
-}
-
-function diminui(number) {
-    var qtde = document.getElementById('number');
-    var number = parseInt(qtde.textContent);
-
-    if (number < 2) {
-        number = 1;
-    } else {
-        number--;
-    }
-    qtde.innerText = number;
-}
-
-function remove_item() {
-    var id_produto = localStorage.getItem("idProduto");
-    var div = document.getElementById("produto_" + id_produto);
-    div.remove();
-    close_popup('fundo_Rem_Pedido', 'popup_Rem_Pedido');
-}
-
 function estende(id) {
     var elemento = document.getElementById(id);
     var button = document.getElementById("button_" + id)
     var seta = document.getElementById("chevron_" + id);
 
     if (elemento.offsetHeight == 0) {
+        elemento.style.opacity = 0;
         elemento.style.display = 'flex';
 
         setTimeout(function () {
-            elemento.style.height = '40px';
+            if (id == 'frete') {
+                elemento.style.height = '130px';
+            } else {
+                elemento.style.height = '40px';
+
+            }
             button.style.fontSize = "25px";
         }, 300);
 
+        setTimeout(function () {
+            elemento.style.opacity=1
+        }, 350);
+
         seta.style.transform = "rotate(185deg)";
     } else {
+        elemento.style.opacity = 0;
         elemento.style.height = '0px';
         button.style.fontSize = "0px";
-
-
-        var frete = document.getElementById('result_frete');
-        frete.style.transform = "scaleY(0)";
 
 
         setTimeout(function () {
@@ -181,27 +162,5 @@ function estende(id) {
 
         seta.style.transform = "rotate(0deg)";
 
-    }
-}
-
-function verifica_cep() {
-    var frete = document.getElementById('result_frete');
-    if (frete.offsetHeight == 0) {
-
-        frete.style.display = 'flex';
-        setTimeout(function () {
-            frete.style.transform = "scaleY(1)";
-        }, 300);
-    } 
-}
-
-function verifica_cupom() {
-    var frete = document.getElementById('desconto_concedido');
-    if (frete.offsetHeight == 0) {
-
-        frete.style.display = 'flex';
-        setTimeout(function () {
-            frete.style.transform = "scaleY(1)";
-        }, 300);
     }
 }

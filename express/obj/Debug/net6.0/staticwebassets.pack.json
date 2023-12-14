@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\acompanha.js",
+      "PackagePath": "staticwebassets\\js\\acompanha.js"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\cesta.js",
       "PackagePath": "staticwebassets\\js\\cesta.js"
     },
@@ -25,12 +29,24 @@
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\pedido.js",
+      "PackagePath": "staticwebassets\\js\\pedido.js"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\perfil.js",
+      "PackagePath": "staticwebassets\\js\\perfil.js"
+    },
+    {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\produto.js",
       "PackagePath": "staticwebassets\\js\\produto.js"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\js\\todos_pedidos.js",
+      "PackagePath": "staticwebassets\\js\\todos_pedidos.js"
     },
     {
       "Id": "C:\\Users\\steph\\source\\repos\\express\\express\\wwwroot\\lib\\bootstrap\\LICENSE",

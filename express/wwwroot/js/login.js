@@ -1,6 +1,8 @@
 const urlBase = "http://localhost:8080";
 
-
+document.querySelector('.img__btn').addEventListener('click', function () {
+    document.querySelector('.cont').classList.toggle('s--signup');
+});
 async function login() {
 
     var email = document.getElementById("emailLogin").value;

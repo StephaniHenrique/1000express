@@ -1,12 +1,12 @@
 ﻿
 @{
 }
-
+<script src="~/js/perfil.js"></script>
 <div class="container_limit">
     <div class="card_dividido">
         <div class="div_content">
             <div id="profile">
-            <div class="title">Olá, Amanda!</div>
+            <div class="title">Olá!</div>
             <div class="group_buttons">
                 <div class="button_option" onclick="change_content()">
                         <div><i class="fa fa-pencil" aria-hidden="true"></i><p>Alterar dados</p></div><i class="fa-solid fa-chevron-right"></i>
@@ -14,12 +14,12 @@
                 <div class="button_option">
                         <div>
                             <i class="fa fa-bell-o" aria-hidden="true"></i><p>Meus pedidos</p>
-                        </div><i class="fa-solid fa-chevron-right"></i>
+                        </div><i onclick="window.location.href='@Url.Action("Index", "Pedido")'" class="fa-solid fa-chevron-right"></i>
                 </div>
                 <div class="button_option">
                             <div>
                             <i class="fa fa-arrow-left" aria-hidden="true"></i><p>Sair da conta</p>
-                        </div><i class="fa-solid fa-chevron-right"></i>
+                        </div><i onclick="logout();" class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
         </div>
@@ -30,10 +30,9 @@
             </div>
             <form>
                     <input type="text" placeholder="Nome Completo" id="nomeCad" />
-                    <input type="email" placeholder="CPF" id="cpfCad" />
                     <input type="email" placeholder="E-mail" id="emailCad" />
-                    <input type="password" placeholder="Senha" id="senhaCad" />
-                <div class="button">Alterar dados</div>
+                    <input type="password" placeholder="Confirme sua senha" id="senhaCad" />
+                <div class="button" onclick="update()">Alterar dados</div>
             </form>
         </div>
         </div>

@@ -2,7 +2,10 @@ const urlBase = "http://localhost:8080";
 
 var funcaoChamada = false;
 
+
+
 $(document).ready(function () {
+
 	var token = localStorage.getItem("token");
 	var userEmail = localStorage.getItem("email");
 
@@ -22,42 +25,47 @@ $(document).ready(function () {
 			return response.json();
 		})
 		.then(data => {
-			var produtos = data['products'];
-			var qtde = data['quantities'];
-			console.log(qtde);
+
 			var html = '';
+			var produtos = data['products'];
+			if (produtos.length != 0) {
+				var qtde = data['quantities'];
 
-			for (let i = 0; i < produtos.length; i++) {
-				const produto = produtos[i];
-				var valor = produto.value * qtde[i];
+				for (let i = 0; i < produtos.length; i++) {
+					const produto = produtos[i];
+					var valor = produto.value * qtde[i];
 
-				html += '<div class="produto" id="produto_id">'; 
-				html += '	<div class="flex">'; 
-				html += '		<div class="produtoImg">'; 
-				html += '			<img src="/src/cardapio_imagens'+produto.image+'" />';
-				html += '		</div>';
-				html += '		<div class="info_produto">';
-				html += '			<div class="title">'+produto.title+'</div';
-				html += '			<div class="obs">'+produto.note+'</div';
-				html += '		</div>';
-				html += '	</div>';
-				html += '	<div class="qtde">';
-				html += '		<button onclick="diminui(' + produto.productId + ')"><i class="fas fa-minus"></i></button> <div id="' + produto.productId + '">'+qtde[i]+'</div> <button onclick="aumenta('+produto.productId+')"><i class="fas fa-plus"></i></button>';
-				html += '	</div>';
-				html += '	<div class="valor">';
-				html += '		R$ <div id="valor' + produto.productId + '">' + valor.toFixed(2) +'</div>';
-				html += '	</div>';
-				html += '	<div class="circle" id="id" onclick="open_popup(\'fundo_Rem_Pedido\', \'popup_Rem_Pedido\')"><i class="fa-solid fa-trash"></i></div>';
-				html += '</div>';
+					html += '<div class="produto" id="produto_' + produto.productId + '">'; 
+					html += '	<div class="flex">'; 
+					html += '		<div class="produtoImg">'; 
+					html += '			<img src="/src/cardapio_imagens'+produto.image+'" />';
+					html += '		</div>';
+					html += '		<div class="info_produto">';
+					html += '			<div class="title">'+produto.title+'</div';
+					html += '			<div class="obs">'+produto.note+'</div';
+					html += '		</div>';
+					html += '	</div>';
+					html += '	<div class="qtde">';
+					html += '		<button onclick="diminui(' + produto.productId + ')"><i class="fas fa-minus"></i></button> <div id="' + produto.productId + '">'+qtde[i]+'</div> <button onclick="aumenta('+produto.productId+')"><i class="fas fa-plus"></i></button>';
+					html += '	</div>';
+					html += '	<div class="valor">';
+					html += '		R$ <div id="valor' + produto.productId + '">' + valor.toFixed(2) +'</div>';
+					html += '	</div>';
+					html += '	<div class="circle" onclick="produto_deleter(' + produto.productId + ')"><i class="fa-solid fa-trash"></i></div>';
+					html += '</div>';
+				}
+			}else {
+				html += '<div style="margin-top: 40px; font-size: 18px">Entre no delivery para fazer seu primeiro pedido</div>';
 			}
 
 			var produtos = document.getElementById("produtos");
-
 			produtos.innerHTML = html;
 
 			calcula_subtotal();
 		})
 		.catch(error => {
+
+			window.location.href = '/';
 			console.error('Erro durante a requisição:', error);
 		});
 
@@ -117,7 +125,7 @@ function diminui(number) {
 	var valorTexto = parseFloat(valor.textContent);
 
 	if (qtdeText > 1) {
-		fetch(urlBase + '/carts/remove', {
+		fetch(urlBase + '/carts/subtract', {
 			method: 'DELETE',
 			headers: {
 				'Authorization': `Bearer ${token}`,
@@ -151,10 +159,36 @@ function diminui(number) {
 }
 
 function remove_item() {
-	var id_produto = localStorage.getItem("idProduto");
+	var id_produto = localStorage.getItem("itemDeletar");
 	var div = document.getElementById("produto_" + id_produto);
-	div.remove();
-	close_popup('fundo_Rem_Pedido', 'popup_Rem_Pedido');
+
+	var email = localStorage.getItem("email");
+	var token = localStorage.getItem("token");
+
+	fetch(urlBase + '/carts/delete', {
+		method: 'DELETE',
+		headers: {
+			'Authorization': `Bearer ${token}`,
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			userEmail: email,
+			productId: id_produto,
+		})
+	})
+		.then(response => {
+			if (response.ok) {
+				console.log(response);
+				close_popup('fundo_Rem_Pedido', 'popup_Rem_Pedido');
+				div.remove();
+				calcula_subtotal();
+			} else {
+				throw new Error(`HTTP error! Status: ${response.status}`);
+			}
+		})
+		.catch(error => {
+			console.error('Erro ao enviar a requisição:', error);
+		});
 }
 
 function calcula_subtotal() {
@@ -178,6 +212,7 @@ function calcula_subtotal() {
 
 function verifica_cep() {
 	var cep = document.getElementById('cep').value;
+	cep = cep.replace(/\D/g, '');
 
 	// Verificar se o CEP possui o formato correto
 	var cepRegex = /^[0-9]{8}$/;
@@ -211,6 +246,7 @@ function verifica_cep() {
 
 function verifica_input() {
 	var cep = document.getElementById('cep').value;
+	cep = cep.replace(/\D/g, '');
 	if (cep != '' && document.getElementById('log').value != '' && document.getElementById('num').value != '') {
 		var cepRegex = /^[0-9]{8}$/;
 		if (!cepRegex.test(cep)) {

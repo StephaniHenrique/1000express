@@ -1,4 +1,16 @@
-﻿
+﻿$('.steps').on('click', '.step--active', function () {
+    $(this).removeClass('step--incomplete').addClass('step--complete');
+    $(this).removeClass('step--active').addClass('step--inactive');
+    $(this).next().removeClass('step--inactive').addClass('step--active');
+});
+
+$('.steps').on('click', '.step--complete', function () {
+    $(this).removeClass('step--complete').addClass('step--incomplete');
+    $(this).removeClass('step--inactive').addClass('step--active');
+    $(this).nextAll().removeClass('step--complete').addClass('step--incomplete');
+    $(this).nextAll().removeClass('step--active').addClass('step--inactive');
+});
+
 function pedido_entregue() {
     content = document.getElementById("acompanha");
     empty = document.getElementById("entregue");
@@ -56,27 +68,6 @@ function back_content() {
     setTimeout(() => { empty.style.transform = "scale(1)"; }, 100);
 }
 
-$('.steps').on('click', '.step--active', function () {
-    $(this).removeClass('step--incomplete').addClass('step--complete');
-    $(this).removeClass('step--active').addClass('step--inactive');
-    $(this).next().removeClass('step--inactive').addClass('step--active');
-});
-
-
-/*--VOLTA--*/
-
-$('.steps').on('click', '.step--complete', function () {
-    $(this).removeClass('step--complete').addClass('step--incomplete');
-    $(this).removeClass('step--inactive').addClass('step--active');
-    $(this).nextAll().removeClass('step--complete').addClass('step--incomplete');
-    $(this).nextAll().removeClass('step--active').addClass('step--inactive');
-});
-
-
-document.querySelector('.img__btn').addEventListener('click', function () {
-    document.querySelector('.cont').classList.toggle('s--signup');
-});
-
 function scrollToDiv(divId) {
     var targetElement = document.getElementById(divId);
 
@@ -118,10 +109,11 @@ function open_popup(fundo, popup) {
         fundo.style.background = '#000000b0';
     }, 300);
 
-    if (popup == "popup_Rem_Pedido") {
-        var button = this.id;
-        localStorage.setItem("idProduto", button.id);
-    }
+}
+
+function produto_deleter(id) {
+    localStorage.setItem('itemDeletar', id);
+    open_popup('fundo_Rem_Pedido', 'popup_Rem_Pedido');
 }
 
 function estende(id) {
@@ -164,3 +156,45 @@ function estende(id) {
 
     }
 }
+
+
+function confirmar_pagamento() {
+    var token = localStorage.getItem('token');
+
+    fetch(urlBase + '/orders/create', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            subtotal: parseFloat(localStorage.getItem('subtotal')),
+            tax: 10.0,
+            total: parseFloat(localStorage.getItem('valorTotal')),
+            discount: localStorage.getItem('desconto') ? parseFloat(localStorage.getItem('desconto')) : 0.0,
+            status: "Andamento",
+            userEmail: localStorage.getItem('email'),
+        })
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+            }
+
+            return response.json();
+        })
+        .then(data => {
+            localStorage.setItem('pedidoRecente', data.orderId);
+            window.location.href = '/Pedido/Acompanha';
+        })
+        .catch(error => {
+            console.error('Erro ao enviar a requisição:', error);
+        });
+}
+
+
+function logout() {
+    localStorage.clear();
+    window.location.href = '/';
+}
+

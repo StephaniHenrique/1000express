@@ -39,7 +39,9 @@ $(document).ready(function () {
 
 			cards.innerHTML = html;
         })
-        .catch(error => {   
+		.catch(error => {   
+
+			window.location.href = '/';
             console.error('Erro durante a requisição:', error);
         });
         

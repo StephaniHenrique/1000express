@@ -2,6 +2,8 @@
 @{
 }
 
+<script src="~/js/acompanha.js"></script>
+
 <div class="container_limit">
     <div class="grid" id="content" style="margin-top: 90px;">
         <div class="acompanha">
@@ -17,11 +19,11 @@
                         <span class="step__icon">2</span>
                         <span class="step__label">Pagamento</span>
                     </li>
-                    <li class="step step--incomplete step--active">
+                    <li class="step step--incomplete step--active" id="fase3">
                         <span class="step__icon">3</span>
                         <span class="step__label">Preparo</span>
                     </li>
-                    <li class="step step--incomplete step--inactive">
+                    <li class="step step--incomplete step--inactive" id="fase4">
                         <span class="step__icon">4</span>
                         <span class="step__label">Entrega</span>
                     </li>
@@ -34,17 +36,16 @@
                 <div class="dados_compra">
                     <div class="title">Resumo</div>
                 </div>
-                <div class="lista_produtos">
-                    <div><p>Pizza de frango</p> <p>2</p></div>
-                    <div><p>Cola cola</p> <p>1</p></div>
-                </div>
+                <div class="lista_produtos" id="lista_produtos">
+                 </div>
                 <div class="valores">
-                    <div><p>Subtotal</p> <p>R$ 20,00</p></div>
-                    <div><p>Frete</p> <p>R$ 20,00</p></div>
-                    <div><p>Total do pedido</p> <p>R$ 40,00</p></div>
+                    <div><p>Subtotal</p> <p id="subtotal">R$ 0.00</p></div>
+                    <div><p>Frete</p> <p>R$ 10.00</p></div>
+                    <div id="div_desconto"><p>Desconto</p><p id="desconto">R$ 0.00</p></div>
+                    <div><p>Total do pedido</p> <p id="total">R$ 0.00</p></div>
                 </div>
             </div>
-            <div onclick="changeToEmpty()" class="button">Recebi meu pedido</div>
+            <button onclick="finalizarPedido()" disabled id="button_finaliza" class="button">Recebi meu pedido</button>
         </div>
     </div>
     <div class="empty" id="empty">
@@ -60,8 +61,8 @@
     <div class="popup" id="popup_avalia">
         <div class="content">
             <div class="title" style="margin-top:20px">Avalie-nos!</div>
-            <textarea id="myTextarea" name="myTextarea" rows="4" cols="50">
-                Comente sua avaliação
+            <textarea id="myTextarea" name="myTextarea" rows="4" cols="50" placeholder="Comente sua avaliação" value="">
+                
             </textarea>
             <div class="estrelas">
                 <input type="radio" id="cm_star-empty" name="fb" value="" checked />
@@ -86,7 +87,7 @@
                 <input type="radio" id="cm_star-5" name="fb" value="5" />
             </div>
             <div class="grid_button">
-                <button onclick="close_popup('fundo_avalia','popup_avalia')">Enviar</button>
+                <button onclick="avaliarPedido()">Enviar</button>
             </div>
         </div>
     </div>

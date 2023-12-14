@@ -65,6 +65,7 @@ body {
     height: 180px;
     color: #fff;
     font-size:14px;
+    width: 100%;
 }
 
 .footer .first_half, .footer .second_half{
@@ -751,19 +752,24 @@ button:disabled {
     font-size: 15px;
 }
 
-.card_pedido .info_small{
-    font-size: 14px;
-}
+    .card_pedido .info_small {
+        font-size: 14px;
+        max-width: 200px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width:200px;
+    }
 
-.preparando {
+.Andamento {
     color: #F25B0A;
 }
 
-.entregue {
+.Entregue {
     color: #287C00;
 }
 
-.cancelado {
+.Cancelado {
     color: #F20A0A;
 }
 
@@ -1110,7 +1116,7 @@ textarea {
 }
 
 
-form{
+form, .form{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -1127,14 +1133,31 @@ input {
     margin-top: 20px;
     border: none;
 }
+.invalido{
+    border: 2px solid #d32222;
+}
+
+.input_invalido{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.text_invalido{
+    color:#d32222;
+    font-size:12px;
+    font-weight:600;
+    margin-top:5px;
+    display:none;
+}
 
 .card_dividido .button {
     color: #fff;
     background-color: #F25B0A;
     border: none;
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
@@ -1229,7 +1252,7 @@ input {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 15px;
         padding: 10px 30px 30px 30px;
     }
 
@@ -1249,7 +1272,7 @@ input {
 
     .popup .content div {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         align-items: center;
     }
 
@@ -1260,9 +1283,8 @@ input {
             align-items: flex-start;
             color: #3F4041;
             font-family: Roboto;
-            font-size: 18px;
+            font-size: 15px;
             font-style: normal;
-            font-weight: 600;
             line-height: normal;
         }
 

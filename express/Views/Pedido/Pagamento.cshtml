@@ -5,7 +5,7 @@
 }
 
 
-
+<script src="~/js/pedido.js"></script>
 <div class="container_limit">
     <div class="card_dividido">
         <div class="div_content">
@@ -28,21 +28,28 @@
                 <img src="~/src//pagamento.png"/>
             </div>
             <div id="content_cartao">
-                <form>
-                    <input type="text" placeholder="Nome completo" id="Nome" />
-                    <input type="text" placeholder="CPF" id="cpf" />
-                    <input type="text" placeholder="Número do cartão" id="cartao" />
+                <div class="form">
+                    <input type="text" placeholder="Nome completo" id="nome" onblur="verificaCartao('nome')" />
+                    <div class="input_invalido">
+                    <input type="text" placeholder="CPF" id="cpf" onblur="verificaCartao('cpf')" />
+                    <p class="text_invalido" id="invalid_cpf">CPF inválido!</p>
+                    </div>
+                    <div class="input_invalido">
+                    <input type="text" placeholder="Número do cartão" id="cartao" onblur="verificaCartao('cartao')" />
+                    <p class="text_invalido" id="invalid_cartao">Número do cartão inválido!</p>
+                    </div>
         
                     <div class="flex">
+                        <div class="input_invalido">
+                        <input type="text" placeholder="Válidade" id="val" onblur="verificaCartao('val')" />
+                        <p class="text_invalido" id="invalid_val">Data inválida</p>
+                        </div>
 
-                        <input type="text" placeholder="Válidade" id="val" />
-
-                        <input type="text" placeholder="CVV" id="cvv" />
-                
+                        <input type="text" placeholder="CVV" id="cvv" onblur="verificaCartao('cvv')" maxlength="3"/>    
                     </div>
                   
-                    <div class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Pagar</div>
-                </form>
+                    <button class="button" id="button_confirm" disabled onclick="confirmar_pagamento()">Pagar</button>
+                </div>
             </div>
             <div id="content_pix">
                 <div class="title_thin">Escaneie o código QR para pagar seu pedido via PIX</div>
@@ -51,7 +58,7 @@
                 </svg>
                 </div>
 
-                <div class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Confirmar pagamento</div>
+                <button class="button" onclick="window.location.href='@Url.Action("Acompanha", "Pedido")'">Confirmar pagamento</button>
             </div>
         </div>
     </div>

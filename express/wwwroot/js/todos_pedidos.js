@@ -87,7 +87,7 @@ $(document).ready(function () {
                     }
                 }
             } else {
-                html = '<div style="margin-top: 40px; font-size: 18px">Entre no delivery para fazer seu primeiro pedido</div>';
+                html = '<div style="margin-top: 40px; font-size: 18px; height: 300px;">Entre no delivery para fazer seu primeiro pedido</div>';
             }
             pedidos.innerHTML = html1+html;
 

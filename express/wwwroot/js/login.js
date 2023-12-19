@@ -80,7 +80,7 @@ async function cadastrarUsuario() {
     if (response.ok) {
         alert("Cadastro realizado com sucesso!");
     } else {
-        alert('Erro ao fazer login. Verifique suas credenciais');
+        alert('Erro ao cadastrar');
     }
 
     document.getElementById('nomeCad').value = '';

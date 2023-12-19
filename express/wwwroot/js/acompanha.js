@@ -95,7 +95,8 @@ function avaliarPedido() {
     stars = stars.split("-")[1];
 
     if (stars === 'empty') {
-        starts = 0;
+        alert('Defina a quantidade de estrelas');
+        return;
     } else {
         stars = parseInt(stars);
     }

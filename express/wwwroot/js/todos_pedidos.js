@@ -14,8 +14,8 @@ $(document).ready(function () {
     })
         .then(response => {
             if (!response.ok) {
-
-                window.location.href = '/';
+                console.log('oi');
+                //window.location.href = '/';
                 throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
             }
 

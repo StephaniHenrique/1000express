@@ -167,11 +167,11 @@ function confirmar_pagamento() {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
+    body: JSON.stringify({
             subtotal: parseFloat(localStorage.getItem('subtotal')),
-            tax: 10.0,
+            tax: 10,
             total: parseFloat(localStorage.getItem('valorTotal')),
-            discount: localStorage.getItem('desconto') ? parseFloat(localStorage.getItem('desconto')) : 0.0,
+            discount: localStorage.getItem('desconto') ? parseFloat(localStorage.getItem('desconto')) : 0,
             status: "Andamento",
             userEmail: localStorage.getItem('email'),
         })

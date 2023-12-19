@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steph\\source\\repos\\express\\express\\express.csproj": {}
+    "C:\\Users\\steph\\source\\repos\\express\\1000express\\express\\express.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steph\\source\\repos\\express\\express\\express.csproj": {
+    "C:\\Users\\steph\\source\\repos\\express\\1000express\\express\\express.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steph\\source\\repos\\express\\express\\express.csproj",
+        "projectUniqueName": "C:\\Users\\steph\\source\\repos\\express\\1000express\\express\\express.csproj",
         "projectName": "express",
-        "projectPath": "C:\\Users\\steph\\source\\repos\\express\\express\\express.csproj",
+        "projectPath": "C:\\Users\\steph\\source\\repos\\express\\1000express\\express\\express.csproj",
         "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steph\\source\\repos\\express\\express\\obj\\",
+        "outputPath": "C:\\Users\\steph\\source\\repos\\express\\1000express\\express\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",

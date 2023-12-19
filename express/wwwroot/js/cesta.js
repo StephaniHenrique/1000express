@@ -182,6 +182,7 @@ function remove_item() {
 				close_popup('fundo_Rem_Pedido', 'popup_Rem_Pedido');
 				div.remove();
 				calcula_subtotal();
+				verifica_cupom();
 			} else {
 				throw new Error(`HTTP error! Status: ${response.status}`);
 			}
@@ -323,7 +324,7 @@ function verifica_cupom() {
 	var cupom = document.getElementById('desconto_concedido');
 	var codigo = document.getElementById('codigo_cupom').value;
 
-	if (codigo==='1000EXPRESS') {
+	if (codigo === '1000EXPRESS') {
 		if (cupom.offsetHeight == 0) {
 
 			cupom.style.display = 'flex';
@@ -335,9 +336,95 @@ function verifica_cupom() {
 			valor = valor.split(' ')[1];
 			valor = parseFloat(valor);
 			valor = valor * 0.15;
-			desconto.innerHTML = '-R$ ' + valor.toFixed(2) ;
+			desconto.innerHTML = '-R$ ' + valor.toFixed(2);
 		}
-	}
+	} else if (codigo === 'NATAL50') {
+		if (cupom.offsetHeight == 0) {
+
+			cupom.style.display = 'flex';
+			setTimeout(function () {
+				cupom.style.transform = "scaleY(1)";
+			}, 300);
+
+			var valor = document.getElementById('valor_subtotal').textContent;
+			valor = valor.split(' ')[1];
+			valor = parseFloat(valor);
+			valor = valor * 0.50;
+			desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+		}
+	} else if (codigo === 'MEGASALE30') {
+		if (cupom.offsetHeight == 0) {
+
+			cupom.style.display = 'flex';
+			setTimeout(function () {
+				cupom.style.transform = "scaleY(1)";
+			}, 300);
+
+			var valor = document.getElementById('valor_subtotal').textContent;
+			valor = valor.split(' ')[1];
+			valor = parseFloat(valor);
+			valor = valor * 0.30;
+			desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+		}
+	} else if (codigo === 'BURGUER OFF') {
+		var burguer = false;
+		var produtos = document.querySelectorAll('.produto');
+
+		for (i = 0; i < produtos.length; i++) {
+			if (produtos[i].id === "produto_17") {
+				burguer = true;
+			}
+		}
+
+		if (burguer) {
+			if (cupom.offsetHeight == 0) {
+
+				cupom.style.display = 'flex';
+				setTimeout(function () {
+					cupom.style.transform = "scaleY(1)";
+				}, 300);
+
+
+				valor = 20;
+				desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+			}
+		} else {
+			alert('Cupom válida apenas para a compra de um X-completão');
+			valor = 0;
+			desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+		}
+	} else if (codigo === 'BTT10%') {
+		var batata = false;
+		var produtos = document.querySelectorAll('.produto');
+		console.log(produtos);
+		for (i = 0; i < produtos.length; i++) {
+			console.log(produtos[i].id);
+			if (produtos[i].id === "produto_1") {
+				batata = true;
+			}
+		}
+
+		if (batata) {
+			if (cupom.offsetHeight == 0) {
+
+				cupom.style.display = 'flex';
+				setTimeout(function () {
+					cupom.style.transform = "scaleY(1)";
+				}, 300);
+
+
+				var valor = document.getElementById('valor_subtotal').textContent;
+				valor = valor.split(' ')[1];
+				valor = parseFloat(valor);
+				valor = valor * 0.10;
+				desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+			}
+		} else {
+			alert('Cupom válida apenas para a compra de batata-frita');
+			valor = 0;
+			desconto.innerHTML = '-R$ ' + valor.toFixed(2);
+		}
+	} 
 
 	calcula_total();
 }
